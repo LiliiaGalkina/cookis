@@ -1,0 +1,231 @@
+/*Обнуление*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	line-height: 1;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+/*--------------------*/
+
+/*FONTS*/
+
+@font-face {
+   font-family: "Steppe";
+   font-style: normal;
+   font-weight: 400;
+   src: local("Steppe"),
+	url("../fonts/Steppe-Book.woff2") format("woff2"),
+   url("../fonts/Steppe-Book.woff") format("woff"),
+	url("../fonts/Steppe-Book.ttf") format("ttf");
+}
+
+@font-face {
+   font-family: "Steppe";
+   font-style: normal;
+   font-weight: 800;
+   src: local("Steppe"),
+	url("../fonts/Steppe-ExtraBold.woff2") format("woff2"),
+   url("../fonts/Steppe-ExtraBold.woff") format("woff"),
+	url("../fonts/Steppe-ExtraBold.ttf") format("ttf");
+}
+
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: "Steppe", sans-serif;
+	font-size: 1.8rem;
+	line-height: 130%;
+	background-color: #5243F4;
+	color: #FFFFFF;
+}
+
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.title {
+	font-size: 6rem;
+	line-height: 100%;
+	font-weight: 800;
+}
+
+.button {
+	display: inline-block;
+	padding: 1.8rem 4.6rem;
+	height: 5.8rem;
+	border-radius: 5rem;
+}
+
+/*HEADER*/
+.header {
+	padding: 4rem 0;
+	
+		&__navigation {
+			max-width: 78.5rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		// .header__logo
+
+		&__logo {
+			max-width: 151px;
+			img {
+				width: 100%;
+			}
+		}
+
+		// .header__list
+
+		&__list {
+			display: flex;
+		}
+
+		// .header__item
+
+		&__item {
+			&:not(:last-child) {
+				margin-right: 5rem;
+			}
+		}
+
+		// .header__link
+
+		&__link {
+			color: inherit;
+			transition: all 0.5s ease;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+}
+
+/*MAIN*/
+.main {
+	padding: 160px 0 200px;
+}
+
+/*hero*/
+.hero {
+
+		// .hero__title
+
+		&__title {
+			margin-bottom: 2rem;
+			font-size: 9rem;
+			line-height: 100%;
+			font-weight: 800;
+		}
+
+		// .hero__text
+
+		&__text {
+			margin-bottom: 4rem;
+			max-width: 69.7rem;
+		}
+
+		// .hero__button
+
+		&__button {
+			background-color: #FFFFFF;
+			color: #5243F4;
+			transition: all 0.5s ease;
+			&:hover {
+				background-color: #948cec;
+				color: #FFFFFF;
+			}
+		}
+}
+
+
