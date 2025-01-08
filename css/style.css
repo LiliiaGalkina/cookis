@@ -338,6 +338,8 @@ body {
   font-weight: 800;
 }
 .about-us__img {
+  position: relative;
+  z-index: 2;
   flex-basis: 50%;
 }
 .about-us__img img {
@@ -455,6 +457,10 @@ body {
   }
   .cards {
     padding: 6rem 0;
+  }
+  .cards__valuta {
+    top: 5rem;
+    left: 90%;
   }
   .about-us {
     padding: 4rem 0;
@@ -574,6 +580,14 @@ body {
   .title {
     font-size: 4rem;
   }
+  .cards__title {
+    -moz-text-align-last: left;
+    text-align-last: left;
+  }
+  .cards__valuta {
+    top: 4rem;
+    left: 80%;
+  }
 }
 @media (max-width: 480px) {
   .header__list.active a {
@@ -591,6 +605,9 @@ body {
   }
   .title {
     font-size: 3rem;
+  }
+  .cards__valuta {
+    top: -3rem;
   }
   .cards__items {
     grid-template-columns: 1fr;
