@@ -62,3 +62,32 @@ for (let i = 0; i < cardButtons.length; i++){
 		formProduct.value = cardProducts[i].textContent;
 	})
 }
+
+//Переключение валюты
+
+let valuta = document.querySelector(".cards__valuta");
+
+valuta.addEventListener('click', function () {
+	if (valuta.textContent == "$") {
+    valuta.textContent = "€";
+    let cardPrices = document.querySelectorAll(".card__price-digit");
+    for (let i = 0; i < cardPrices.length; i++) {
+      cardPrices[i].textContent =
+        Math.floor(parseInt(cardPrices[i].textContent) * 1.03) + "€";
+    }
+  } else if (valuta.textContent == "€") {
+    valuta.textContent = "₽";
+    let cardPrices = document.querySelectorAll(".card__price-digit");
+    for (let i = 0; i < cardPrices.length; i++) {
+      cardPrices[i].textContent =
+        Math.floor(parseInt(cardPrices[i].textContent) * 106.1) + "₽";
+    }
+  } else if (valuta.textContent == "₽") {
+    valuta.textContent = "$";
+    let cardPrices = document.querySelectorAll(".card__price-digit");
+    for (let i = 0; i < cardPrices.length; i++) {
+      cardPrices[i].textContent =
+        Math.floor(parseInt(cardPrices[i].textContent) * 0.0098) + "$";
+    }
+  }
+})
