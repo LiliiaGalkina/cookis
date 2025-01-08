@@ -24,6 +24,7 @@ formBtn.addEventListener('click', function (event) {
 		formProduct.style.border = "0.2rem solid red";
 		alert("Поле 'Наименование печенья' не может быть пустым!");
 		event.preventDefault();
+		formProduct.focus();
 		formProduct.addEventListener('input', function () {
 			formProduct.style.border = "0.1rem solid #FFFFFF";
 		})
@@ -31,6 +32,7 @@ formBtn.addEventListener('click', function (event) {
 		formName.style.border = "0.2rem solid red";
 		alert("Поле 'Ваше имя' не может быть пустым!");
 		event.preventDefault();
+		formName.focus();
 		formName.addEventListener("input", function () {
 			formName.style.border = "0.1rem solid #FFFFFF";
       });
@@ -38,16 +40,35 @@ formBtn.addEventListener('click', function (event) {
 		formPhone.style.border = "0.2rem solid red";
 		alert("Поле 'Ваш телефон' не может быть пустым!");
 		event.preventDefault();
+		formPhone.focus();
 		formPhone.addEventListener("input", function () {
 			formPhone.style.border = "0.1rem solid #FFFFFF";
 		});
+		
+		formPhone.addEventListener('change', function () {
+			let reg = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+			if (!reg.test(formPhone.value)) {
+				alert("Введен некорректный номер");
+				formPhone.style.border = "0.2rem solid red";
+			}
+		})
 	} else {
-		formProduct.value = "";
-		formName.value = "";
-		formPhone.value = "";
-		formProduct.style.border = "0.1rem solid #FFFFFF";
-		formName.style.border = "0.1rem solid #FFFFFF";
-		formPhone.style.border = "0.1rem solid #FFFFFF";
+		let reg = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+		let phone = formPhone.value;
+		if (!reg.test(phone)) {
+			alert("Введен некорректный номер");
+			formPhone.style.border = "0.2rem solid red";
+			formPhone.focus();
+			event.preventDefault()
+		} else {
+			formProduct.value = "";
+			formName.value = "";
+			formPhone.value = "";
+			formProduct.style.border = "0.1rem solid #FFFFFF";
+			formName.style.border = "0.1rem solid #FFFFFF";
+			formPhone.style.border = "0.1rem solid #FFFFFF";
+			alert("Заказ оформлен! В ближайшее время с вами свяжется наш менеджер.")
+		}
 	}
 })
 
