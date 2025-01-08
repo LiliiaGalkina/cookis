@@ -1,3 +1,7 @@
+'use strict'
+
+//Меню для мобильного
+
 let burger = document.querySelector("#burger");
 let menu = document.querySelector("#menu");
 
@@ -6,4 +10,55 @@ burger.addEventListener("click", func);
 function func() {
   burger.classList.toggle("active");
   menu.classList.toggle("active");
+}
+
+//Валидация формы
+
+let formProduct = document.querySelector(".form-order-product");
+let formName = document.querySelector(".form-order-name");
+let formPhone = document.querySelector(".form-order-phone");
+let formBtn = document.querySelector(".form-order__button");
+
+formBtn.addEventListener('click', function (event) {
+	if (formProduct.value == "") {
+		formProduct.style.border = "0.2rem solid red";
+		alert("Поле 'Наименование печенья' не может быть пустым!");
+		event.preventDefault();
+		formProduct.addEventListener('input', function () {
+			formProduct.style.border = "0.1rem solid #FFFFFF";
+		})
+	} else if (formName.value == "") {
+		formName.style.border = "0.2rem solid red";
+		alert("Поле 'Ваше имя' не может быть пустым!");
+		event.preventDefault();
+		formName.addEventListener("input", function () {
+			formName.style.border = "0.1rem solid #FFFFFF";
+      });
+	} else if (formPhone.value == "") {
+		formPhone.style.border = "0.2rem solid red";
+		alert("Поле 'Ваш телефон' не может быть пустым!");
+		event.preventDefault();
+		formPhone.addEventListener("input", function () {
+			formPhone.style.border = "0.1rem solid #FFFFFF";
+		});
+	} else {
+		formProduct.value = "";
+		formName.value = "";
+		formPhone.value = "";
+		formProduct.style.border = "0.1rem solid #FFFFFF";
+		formName.style.border = "0.1rem solid #FFFFFF";
+		formPhone.style.border = "0.1rem solid #FFFFFF";
+	}
+})
+
+
+//Формирование заказа
+
+let cardButtons = document.querySelectorAll(".card__button");
+let cardProducts = document.querySelectorAll(".card__title");
+
+for (let i = 0; i < cardButtons.length; i++){
+	cardButtons[i].addEventListener('click', function () {
+		formProduct.value = cardProducts[i].textContent;
+	})
 }
