@@ -50,6 +50,8 @@ formBtn.addEventListener('click', function (event) {
 			if (!reg.test(formPhone.value)) {
 				alert("Введен некорректный номер");
 				formPhone.style.border = "0.2rem solid red";
+                formPhone.value = "";
+                formPhone.focus();
 			}
 		})
 	} else {
@@ -58,6 +60,7 @@ formBtn.addEventListener('click', function (event) {
 		if (!reg.test(phone)) {
 			alert("Введен некорректный номер");
 			formPhone.style.border = "0.2rem solid red";
+            formPhone.value = "";
 			formPhone.focus();
 			event.preventDefault()
 		} else {
